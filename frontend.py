@@ -17,7 +17,7 @@ def form_example():
             privacy=request.form['option2'].encode("utf-8")
 
             products.append(product)
-            addresses.append(street)
+            addresses.append(address)
             delays.append(delay)
             privacies.append(privacy)
 
