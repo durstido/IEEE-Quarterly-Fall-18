@@ -30,11 +30,7 @@ def form_example():
 
         return '''<form method="POST">
                   Product: <input type="text" name="product"><br>
-                  Address: <br>
-                    Street: <input type="text" name="street"><br>
-                    City: <input type="text" name="city"><br>
-                    State: <input type="text" name="state"><br>
-                    Zip:<input type="text" name="zip"><br>
+                  Address (street, city, state): <input type="text" name="address"><br>
                   Would you be willing to delay your shipping? <br>
                   <input type="radio" name="option1" value="yes, for one day">yes, for one day<br>
                   <input type="radio" name="option1" value="yes, for two days">yes, for two days<br>
