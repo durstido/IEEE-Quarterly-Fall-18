@@ -3,10 +3,7 @@ from flask import Flask, request
 app = Flask(__name__)
 
 products = []
-streets = []
-cities = []
-states = []
-zips = []
+addresses = []
 delays = []
 privacies = []
 
@@ -15,18 +12,12 @@ def form_example():
     #if request.method == 'POST':
         if request.form.get('submit') == 'Submit':
             product = request.form.get('product').encode("utf-8")
-            street = request.form.get('street').encode("utf-8")
-            city = request.form.get('city').encode("utf-8")
-            state = request.form.get('state').encode("utf-8")
-            Zip = request.form.get('zip').encode("utf-8")
+            address = request.form.get('address').encode("utf-8")
             delay=request.form['option1'].encode("utf-8")
             privacy=request.form['option2'].encode("utf-8")
 
             products.append(product)
-            streets.append(street)
-            cities.append(cities)
-            states.append(states)
-            zips.append(Zip)
+            addresses.append(street)
             delays.append(delay)
             privacies.append(privacy)
 
