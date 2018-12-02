@@ -54,7 +54,7 @@ def lumpedOrders(orderList, today):
 
 
 
-
+'''
 user1 = '2018:11:20-1.23-0-product1-123 Test Street, City, CA'
 user2 = '2018:11:22-3.534-0-product2-456 Test Street, City, CA'
 user3 = '2018:11:24-0.2342-0-product1-789 Test Street, City, CA'
@@ -85,3 +85,4 @@ for order in generalOrders:
         addressList.append(order[4])
 
 print (list(set(addressList)))
+'''
