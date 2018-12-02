@@ -14,20 +14,45 @@ def addressToDistance(address1, address2):
     *** Note the addresses must be passed in as strings ***
     '''
     loc1 = gmaps.geocode(address1)
-    loc1_lat = loc1[0]['geometry']['location']['lat']
-    loc1_long = loc1[0]['geometry']['location']['lat']
+    lat1 = loc1[0]['geometry']['location']['lat']
+    lon1 = loc1[0]['geometry']['location']['lat']
 
     loc2 = gmaps.geocode(address2)
-    loc2_lat = loc2[0]['geometry']['location']['lat']
-    loc2_long = loc2[0]['geometry']['location']['lat']
+    lat2 = loc2[0]['geometry']['location']['lat']
+    lon2 = loc2[0]['geometry']['location']['lat']
 
     #print(loc1_lat)
     #print(loc2_lat)
 
-    deltaLat = loc2_lat - loc1_lat
-    deltaLong = loc2_long - loc1_long
+    R = 6371000  # radius of Earth in meters
+    phi_1 = math.radians(lat1)
+    phi_2 = math.radians(lat2)
 
-    return math.sqrt(math.pow(deltaLat, 2) + math.pow(deltaLong, 2))
+    delta_phi = math.radians(lat2 - lat1)
+    delta_lambda = math.radians(lon2 - lon1)
+
+    a = math.sin(delta_phi / 2.0) ** 2 + math.cos(phi_1) * math.cos(phi_2) * math.sin(delta_lambda / 2.0) ** 2
+
+    c = 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
+
+    meters = R * c  # output distance in meters
+    km = meters / 1000.0  # output distance in kilometers
+
+    meters = round(meters, 3)
+    km = round(km, 3)
+
+    #print(f"Distance: {meters} m")
+    #print(f"Distance: {km} km")
+
+    return km
+
+
+address1 = '100 Walton Street, Crescent City, CA'
+address2 = '9500 Gilman Dr, La Jolla, CA'
+
+addressToDistance(address1, address2)
+
+#print(addressToDistance(address1, address2))
 
 """
 #get user address
