@@ -29,12 +29,6 @@ def addressToDistance(address1, address2):
 
     return math.sqrt(math.pow(deltaLat, 2) + math.pow(deltaLong, 2))
 
-
-address1 = '100 Walton Street, Crescent City, CA'
-address2 = '9500 Gilman Dr, La Jolla, CA'
-
-print(addressToDistance(address1, address2))
-
 """
 #get user address
 loc_json = gmaps.geocode('100 Walton Street, Crescent City, CA')
