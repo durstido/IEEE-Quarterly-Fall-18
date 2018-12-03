@@ -1,0 +1,23 @@
+Set-up:
+- Download all python files on our IEEE-Quarterly-Fall-18 Repository 
+- Make sure to have all libraries that are in each python file
+- Change saving map location on frontend.py 
+    - In frontend.py, go to comment (“change to save it on your own desktop”) — just control f it
+    - Then, change to the location where you want to save the map
+- change date searched for in frontend.py
+    - Control f '3' and change it do the day you're looking for (if you're currently in December and want to look at order lists of 12/4, change '3' to '4')
+
+Task:
+- Run frontend.py
+- Open local host; should see a list of questions and answers
+- For example, put in the following:
+    - Pr1; 2966 Massasoit Ave, San Diego, CA; yes, for two days; yes, please! (Press Submit)
+    - Pr2; 2966 Massasoit Ave, San Diego, CA; yes, for two days; yes, please! (Press Submit)
+        - The first two will show that even though we have two orders by two different people that are going to the same place, it will still be the same order as they will share a box (they didn’t need privacy)
+    - Pr3; 5029 Arroyo Lindo Ave, San Diego, CA; yes, for two days; yes, please! (Press Submit)
+    - Press stop
+- Should say on screen “thank you for shopping with us!”
+
+To check if worked:
+- Go to wherever you wanted to save your map file, double click it, and should open a web page with 3 "stops,"
+  one in red, being the base, and two in blue, being the shipment addresses.
